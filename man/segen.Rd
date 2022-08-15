@@ -23,7 +23,7 @@ segen(
 )
 }
 \arguments{
-\item{df}{A data frame with time features on columns}
+\item{df}{A data frame with time features on columns. They could be numeric variables or categorical, but not both.}
 
 \item{seq_len}{Positive integer. Time-step number of the forecasting sequence. Default: NULL (automatic selection between 2 and max limit).}
 
@@ -67,7 +67,7 @@ This function returns a list including:
 Sequence Generalization Through Similarity Network
 }
 \examples{
-segen(time_features, seq_len = 30, similarity = 0.7, n_windows = 3, n_samp = 1)
+segen(time_features[, 1, drop = FALSE], seq_len = 30, similarity = 0.7, n_windows = 3, n_samp = 1)
 
 
 }
